@@ -29,11 +29,7 @@ jobs:
       # 执行部署
   # publish    
     - name: Publish
-      uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/  # 设置发包npm地址仓库
-      run: npm publish # 执行发布
+    - run: npm publish # 执行发布
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # 刚刚设置的 NPM_TOKE
   
